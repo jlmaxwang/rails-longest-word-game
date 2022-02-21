@@ -1,0 +1,13 @@
+<h1>your score</h1>
+<p>Your word is <%= params[:word] %></p>
+
+<% if @included %>
+  <% if @english_word %>
+    <p><%= @word %> is a valid English word!</p>
+  <% else %>
+    <p><%= @word %> is not valid</p>
+  <% end %>
+<% else %>
+  <p><%= @word %> is not built from <%= @letters.join(", ") %></p>
+<% end %>
+<%= link_to "Play again", new_path %>
